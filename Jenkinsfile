@@ -7,13 +7,14 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/sanju123-s/my_webapp.git',
-                    credentialsId: 'github-credentials-id'
-            }
-        }
+     stage('Checkout') {
+    steps {
+        git branch: 'main',
+            url: 'https://github.com/sanju123-s/my_webapp.git',
+            credentialsId: 'github-credentials-id'
+    }
+}
+
 
         stage('Build Docker Image') {
             steps {
