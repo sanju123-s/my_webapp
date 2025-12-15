@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = 'dockerhub-creds'   // Sanju Docker Hub credentials ID
+        DOCKERHUB_CREDENTIALS = '3d149d01-1e65-4ad4-9e3b-7b855cfe7326'   // Sanju Docker Hub credentials ID
         IMAGE_NAME = 'sanju413/my_webapp'            // Sanju Docker Hub repo
     }
 
