@@ -2,25 +2,24 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = 'Sanju_123'   // Sanju Docker Hub credentials ID
-        IMAGE_NAME = 'sanju413/my_webapp'            // Sanju Docker Hub repo
+        DOCKERHUB_CREDENTIALS = 'dockerhub-creds'
+        IMAGE_NAME = 'sanju413/my_webapp'
     }
 
     stages {
-     stage('Checkout') {
-    steps {
-        git branch: 'main',
-            url: 'https://github.com/sanju123-s/my_webapp',
-            credentialsId: 'github-credentials-id'
-    }
-}
-
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/sanju123-s/my_webapp.git'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("${IMAGE_NAME}:latest")
-                }
+                sh """
+                    docker --version
+                    docker build -t ${IMAGE_NAME}:latest .
+                """
             }
         }
 
