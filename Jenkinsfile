@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = 'Sanju_123'
+        DOCKERHUB_CREDENTIALS = '3ae068b0-d90d-43fd-83c0-ec128e92474f'
         IMAGE_NAME = 'sanju413/my_webapp'
     }
 
